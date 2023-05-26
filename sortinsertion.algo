@@ -1,0 +1,28 @@
+/*procedure tri d'insertion*/
+PROCEDURE insertion_sort(tab : ARRAY_OF INTEGER[];)
+VAR
+    i:INTEGER;
+    j:INTEGER;
+    temp:INTEGER;
+BEGIN
+    
+    FOR i FROM 2 TO tab.length STEP 1  DO
+      
+        j:=i;
+        temp:=tab[i];
+        WHILE (j>0 AND tab[j-1]>temp) DO
+            tab[j]:=tab[j-1];
+            tab[j-1]:=temp;
+            j:=j-1;
+        END_WHILE
+        tab[j]:=temp;
+      
+   END_FOR
+END
+/*algorithme*/
+ALGORITHM sortalgo
+VAR
+    T : ARRAY_OF INTEGER[];
+BEGIN
+    insertion_sort(T);
+END
