@@ -1,15 +1,17 @@
 /*procedure tri d'insertion*/
-PROCEDURE insertion_sort(tab : ARRAY_OF INTEGER[];)
+PROCEDURE insertion_sort(VAR tab : ARRAY_OF INTEGER[])
 VAR
+/*DECLARATION DES VARIABLES DE LA PROCEDURE*/
     i:INTEGER;
     j:INTEGER;
-    temp:INTEGER;
+    temp:INTEGER;/*VARIABLE DE PERMUTATION*/
 BEGIN
-    
+    /*BOUCLE POUR PARCOURIR LE PREMIER TABLEAU*/
     FOR i FROM 2 TO tab.length STEP 1  DO
-      
+        /*INITIALISATION DE I ET J*/
         j:=i;
         temp:=tab[i];
+        /*BOUCLE TANT QUE POUR PARCOURIR LE DEUXIEME TABLEAU */
         WHILE (j>0 AND tab[j-1]>temp) DO
             tab[j]:=tab[j-1];
             tab[j-1]:=temp;
